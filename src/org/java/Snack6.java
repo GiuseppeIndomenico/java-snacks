@@ -11,7 +11,10 @@ public class Snack6 {
         System.out.print("Inserisci una stringa: ");
 
         String str = sc.nextLine();
-        int intValue = 0; // Inizializza l'intero risultante
+        
+        sc.close();
+        
+        int intValue = 0; 
 
         for (int i = 0; i < str.length(); i++) {
             char digit = str.charAt(i);
@@ -24,6 +27,5 @@ public class Snack6 {
 
         System.out.println("Il numero trovato: " + intValue);
 
-        sc.close();
     }
 }
