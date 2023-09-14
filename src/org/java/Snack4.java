@@ -6,23 +6,25 @@ public class Snack4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Inserire la parola:");
-        String word = sc.nextLine();
+        System.out.println("Inserire una frase:");
+        String frase = sc.nextLine();
 
-        word = word.trim().toLowerCase(); 
+        frase = frase.trim().toLowerCase(); 
+        
+        String cleanFrase = frase.replaceAll("\\s+", "");
+        
+        char[] charArray = cleanFrase.toCharArray();
 
-        char[] charArray = word.toCharArray();
-
-        String reversedWord = "";
+        String reversedFrase = "";
 
         for (int i = charArray.length - 1; i >= 0; i--) {
-            reversedWord += charArray[i];
+            reversedFrase += charArray[i];
         }
 
-        if (word.equals(reversedWord)) {
-            System.out.println("La parola è palindroma.");
+        if (cleanFrase.equals(reversedFrase)) {
+            System.out.println("La frase è palindroma.");
         } else {
-            System.out.println("La parola non è palindroma.");
+            System.out.println("La frase non è palindroma.");
         }
 
         sc.close();
